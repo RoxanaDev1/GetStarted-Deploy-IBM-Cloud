@@ -114,3 +114,20 @@ We would need to have 2 files in order to deploy a Cloud foundry application:
   node_modules
   src/build
   ```
+
+4. Publish the application to the cloud!
+
+Navigate to the location of the code using:
+
+`cd FOLDER_NAME` to go into a folder
+`cd ..` to go outside a folder
+
+Execute:
+
+`ibmcloud cf push`
+
+If everything went OK, your application should be running in the cloud, and you can access it via the following link:
+
+`<YOU_APP_NAME>.eu-gb.mybluemix.net`
+
+5. DONE!
