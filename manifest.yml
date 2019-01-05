@@ -1,0 +1,4 @@
+applications:
+  - name: CloudDemoR
+memory: 256M
+buildpack: https://github.com/cloudfoundry/nodejs-buildpack

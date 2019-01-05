@@ -55,3 +55,62 @@ This "box" will usually be aware of what code we are using, this is called "buil
 ### Why do we use the command line?
 
 I know not everyone is a fan of command line, as the user interface is super simple and not always very informative. In this case I think the command line would be the fastest way to get this application up and running.
+
+## Connecting to your IBM Cloud account using the command line.
+
+Under this section we will connect to the IBM Cloud using our command line.
+We will have to connect to the IBM Cloud in order to deploy our application in the correct place.
+
+Follow the below steps, where each contains a bit of explanation what do they mean.
+
+1. `ibmcloud login --sso`
+
+The above command would log you in from command line to your account on IBM Cloud. A new browser window will be opened where you will be able to login and get a one time code to use.
+Copy the code into the command line, and click enter.
+
+Note - on PC you can right click the code in and click enter (the code is not visible on purpose).
+On a Mac you can just cmd + v in your command line.
+
+Once logged in you should be able to see some information about your account, for example region. Region is where in the world your application will be deployed, or where is the data center is located.
+Usually we target the closest one, for us is the UK as we work on a free account.
+
+2. `ibmcloud target --cf`
+
+Now let's setup our Cloud foundry.
+
+If you look back in the information displayed on the screen after logging in there are 3 empty lines:
+
+CF API endpoint,
+Org,
+Space
+
+Those are the ones we will be fill by using the command above.
+If everything went as it should, the new information on the screen will contain those lines filled.
+
+By default it should target the same place as our API endpoint.
+
+3. Code setup for deploying a Cloud foundry application.
+
+We would need to have 2 files in order to deploy a Cloud foundry application:
+
+- manifest.yml - This file is like a setup file for Cloud foundry. The file contains some basic setup functions like, how our application should be named or how much memory should it consume?
+- .cfignore - This file is important as Cloud foundry is smart and knows how to do some things for us, so when we upload our application the files mentioned in .cfignore would be not uploaded and ignored, mainly because Cloud foundry knows how to re-create them.
+  An example is node_modules - Cloud foundry knows how to npm install the dependency without us uploading them.
+
+  **manifest.yml**
+  Your code should already contain this file, go ahead and change the name of the application under name. If everyone used the same name, we will not be able to all deploy as the names would create conflicts.
+
+  ```
+  applications:
+  - name: YOUR_NAME_HERE
+  memory: 256M
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  ```
+
+  **.cfignore**
+  Nothing to do here, those are the libs which we do not need to upload.
+
+  ```
+  node_modules
+  src/build
+  ```
