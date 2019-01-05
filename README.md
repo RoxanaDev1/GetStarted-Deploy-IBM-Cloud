@@ -29,6 +29,8 @@ Note - No credit card is needed for a free registration nor for creating a simpl
 
 - Mac: iTerm or the regular command line.
 
+4. Clone the repository and make sure it runs locally
+
 ## Understanding the tools we will be using
 
 ### IBM Cloud - PaaS
@@ -80,9 +82,7 @@ Now let's setup our Cloud foundry.
 
 If you look back in the information displayed on the screen after logging in there are 3 empty lines:
 
-CF API endpoint,
-Org,
-Space
+`CF API endpoint, Org, Space`
 
 Those are the ones we will be fill by using the command above.
 If everything went as it should, the new information on the screen will contain those lines filled.
@@ -131,3 +131,5 @@ If everything went OK, your application should be running in the cloud, and you 
 `<YOU_APP_NAME>.eu-gb.mybluemix.net`
 
 5. DONE!
+
+## Using the IBM Cloud web dashboard
