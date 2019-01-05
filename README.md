@@ -112,7 +112,6 @@ We would need to have 2 files in order to deploy a Cloud foundry application:
 
   ```
   node_modules
-  src/build
   ```
 
 4. Publish the application to the cloud!
