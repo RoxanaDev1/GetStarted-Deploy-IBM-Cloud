@@ -143,12 +143,12 @@ If everything went OK, your application should be running in the cloud, and you 
 
 1. Use the fork button marked in the image:
 
-![GitHub fork button](./images/Image_1_Fork_Repo_Button)
+![GitHub fork button](./images/Image_1_Fork_Repo_Button.PNG)
 
 2. Create a local copy of the repository once cloned
 
 Copy the address to your forked repository:
-![Github clone button](./images/Image_2_Clone_Repo_Button)
+![Github clone button](./images/Image_2_Clone_Repo_Button.PNG)
 
 Open your GitBash:
 
