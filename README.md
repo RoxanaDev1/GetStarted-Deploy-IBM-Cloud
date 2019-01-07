@@ -139,6 +139,31 @@ If everything went OK, your application should be running in the cloud, and you 
 
 ## Using the IBM Cloud web dashboard
 
+On the dashboard you will be able to see your application and it's status:
+
+![GitHub fork button](./images/Image_3_IBM_Cloud_Dashboard.PNG)
+
+You are also able to see all the information we went through earlier from command line, like where is the application deployed to.
+
+Notice the 3 dots on the right side of the line. This is a menu where you can control your application for example: start, rename and delete application.
+I would recommend to stop and/or delete your demo application when done working.
+
+When clicking on the application, another dashboard will open:
+
+![GitHub fork button](./images/Image_4_IBM_Cloud_App_Dashboard.PNG)
+
+In this dashboard there are a few more options, things like seeing the Logs. Logs are really important when running an application, if something happens or crashes, you will be able to see this in the logs.
+Another cool thing one can do is change the amount of memory the application is using (remember this is a free account so we are limited), but ideally we can control how much we use and make sure we are not using more then needed.
+
+There are many more things which can be added and done through the dashboard, which we can hold for another session.
+
+## Deactivating the IBM Cloud account
+
+If you would like to deactivate the account, you will need to do this from the dashboard.
+On the top navigation bar select:
+
+`Manage -> Billing and usage -> Billing -> Scroll all the way down -> Deactivate this account`
+
 ## Fork GitHub repository
 
 1. Use the fork button marked in the image:
