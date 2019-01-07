@@ -5,7 +5,7 @@
 Welcome to my "Get Started" series!
 
 In this repository I am going to reuse my previous code from "GetStarted-TypeScript-Express-React" and show with detailed steps how to deploy this code into the cloud. The code is slightly modified in this repository to match the needs for deploying an application to the cloud, but the basics are the same.
-Notice that the application does not do much, it is just a base setup and "Hellow world" frontend attached to it.
+Notice that the application does not do much, it is just a base setup and "Hello world" frontend attached to it.
 
 I have chosen IBM Cloud as no credit card or pre-information is needed in order to register or start working with it.
 
@@ -29,7 +29,12 @@ Note - No credit card is needed for a free registration nor for creating a simpl
 
 - Mac: iTerm or the regular command line.
 
-4. Clone the repository and make sure it runs locally
+4. Git installed on the machine for working with Git code.
+
+- PC - GitBash
+- Macs - iTerm should be enough.
+
+5. Github account for forking the repository and make sure it runs locally. If you do not know how to do this, please follow the instructions at the end of the file.
 
 ## Understanding the tools we will be using
 
@@ -93,8 +98,8 @@ By default it should target the same place as our API endpoint.
 
 We would need to have 2 files in order to deploy a Cloud foundry application:
 
-- manifest.yml - This file is like a setup file for Cloud foundry. The file contains some basic setup functions like, how our application should be named or how much memory should it consume?
-- .cfignore - This file is important as Cloud foundry is smart and knows how to do some things for us, so when we upload our application the files mentioned in .cfignore would be not uploaded and ignored, mainly because Cloud foundry knows how to re-create them.
+- `manifest.yml` - This file is like a setup file for Cloud foundry. The file contains some basic setup functions like, how our application should be named or how much memory should it consume?
+- `.cfignore` - This file is important as Cloud foundry is smart and knows how to do some things for us, so when we upload our application the files mentioned in .cfignore would be not uploaded and ignored, mainly because Cloud foundry knows how to re-create them.
   An example is node_modules - Cloud foundry knows how to npm install the dependency without us uploading them.
 
   **manifest.yml**
@@ -118,8 +123,9 @@ We would need to have 2 files in order to deploy a Cloud foundry application:
 
 Navigate to the location of the code using:
 
-`cd FOLDER_NAME` to go into a folder
-`cd ..` to go outside a folder
+`cd FOLDER_NAME` - to go into a folder.
+
+`cd ..` - to go outside a folder
 
 Execute:
 
@@ -129,6 +135,26 @@ If everything went OK, your application should be running in the cloud, and you 
 
 `<YOU_APP_NAME>.eu-gb.mybluemix.net`
 
-5. DONE!
+5. Done!
 
 ## Using the IBM Cloud web dashboard
+
+## Fork GitHub repository
+
+1. Use the fork button marked in the image:
+
+![GitHub fork button](./images/Image_1_Fork_Repo_Button)
+
+2. Create a local copy of the repository once cloned
+
+Copy the address to your forked repository:
+![Github clone button](./images/Image_2_Clone_Repo_Button)
+
+Open your GitBash:
+
+- Navigate to the directory you wish to have the repository in.
+- Use: `git clone <COPIED_LINK>`
+- Login to git if needed.
+- Wait for the process to be finished.
+
+3. Done!
