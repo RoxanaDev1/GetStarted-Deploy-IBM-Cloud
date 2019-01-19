@@ -11,7 +11,7 @@ I have chosen IBM Cloud as no credit card or pre-information is needed in order 
 
 The guide can also orient new cloud users, or users which would like to learn more about how to work with cloud platforms a quick start.
 
-I would recommend having some experience with the tooling on your PC or MAC such as command line, and some minimal previous understanding of code.
+I would recommend having some experience with the tooling on your PC or MAC such as command line, and some minimal previous understanding of code (if you would like to look into the code).
 
 ## Pre-requirements
 
@@ -29,12 +29,28 @@ Note - No credit card is needed for a free registration nor for creating a simpl
 
 - Mac: iTerm or the regular command line.
 
+  **Optional - This part is not needed in order to complete the flow**
+
+Use this part if you would wish to build the GitHub repository locally.
+
 4. Git installed on the machine for working with Git code.
 
 - PC - GitBash
 - Macs - iTerm should be enough.
 
 5. Github account for forking the repository and make sure it runs locally. If you do not know how to do this, please follow the instructions at the end of the file.
+
+6. npm tools installed
+
+7. If you do decide to fork the repository, make sure to:
+
+```
+npm install
+
+npm run build
+
+npm start
+```
 
 ## Understanding the tools we will be using
 
@@ -63,6 +79,8 @@ This "box" will usually be aware of what code we are using, this is called "buil
 
 I know not everyone is a fan of command line, as the user interface is super simple and not always very informative. In this case I think the command line would be the fastest way to get this application up and running.
 
+# Let's get started!
+
 ## Connecting to your IBM Cloud account using the command line.
 
 Under this section we will connect to the IBM Cloud using our command line.
@@ -70,7 +88,7 @@ We will have to connect to the IBM Cloud in order to deploy our application in t
 
 Follow the below steps, where each contains a bit of explanation what do they mean.
 
-1. `ibmcloud login --sso`
+1. `ibmcloud login -a api.eu-gb.bluemix.net --sso`
 
 The above command would log you in from command line to your account on IBM Cloud. A new browser window will be opened where you will be able to login and get a one time code to use.
 Copy the code into the command line, and click enter.
@@ -81,20 +99,36 @@ On a Mac you can just cmd + v in your command line.
 Once logged in you should be able to see some information about your account, for example region. Region is where in the world your application will be deployed, or where is the data center is located.
 Usually we target the closest one, for us is the UK as we work on a free account.
 
+Notice that free accounts are usually created under the UK region. If you do know how to navigate with cf tools you can just use the following:
+
+`ibmcloud login --sso`
+
 2. `ibmcloud target --cf`
 
 Now let's setup our Cloud foundry.
 
 If you look back in the information displayed on the screen after logging in there are 3 empty lines:
 
-`CF API endpoint, Org, Space`
+`CF API endpoint, Org and Space`
 
 Those are the ones we will be fill by using the command above.
 If everything went as it should, the new information on the screen will contain those lines filled.
 
 By default it should target the same place as our API endpoint.
 
-3. Code setup for deploying a Cloud foundry application.
+3. Download the GitHub Repository as a Zip, using the instructions under:
+
+`Download the GitHub Repository as ZIP`
+
+The section is found lower in this guide.
+
+4. Setup your application name:
+
+Navigate to `<POJECT_FOLDER\>` with your favorite file browser, and open the file `manifest.yml`
+Change the application name under `- name: CloudDemoR`
+Save the file.
+
+**Background**
 
 We would need to have 2 files in order to deploy a Cloud foundry application:
 
@@ -119,7 +153,7 @@ We would need to have 2 files in order to deploy a Cloud foundry application:
   node_modules
   ```
 
-4. Publish the application to the cloud!
+5. Publish the application to the cloud!
 
 Navigate to the location of the code using:
 
@@ -135,7 +169,7 @@ If everything went OK, your application should be running in the cloud, and you 
 
 `<YOU_APP_NAME>.eu-gb.mybluemix.net`
 
-5. Done!
+6. Done!
 
 ## Using the IBM Cloud web dashboard
 
@@ -163,6 +197,16 @@ If you would like to deactivate the account, you will need to do this from the d
 On the top navigation bar select:
 
 `Manage -> Billing and usage -> Billing -> Scroll all the way down -> Deactivate this account`
+
+## Download the GitHub Repository as ZIP
+
+1. Use the download Zip button on GitHub
+
+![GitHub fork button](./images/Image_5_Download_zip.PNG)
+
+2. Once the Zip is downloaded, unzip the file in your favorite folder.
+
+3. Done!
 
 ## Fork GitHub repository
 
